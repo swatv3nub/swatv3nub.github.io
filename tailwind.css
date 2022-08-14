@@ -779,7 +779,7 @@ video {
 
 .bg-blue-600 {
   --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+  background-color: rgb(37 99 220 / var(--tw-bg-opacity));
 }
 
 .bg-gray-900 {
@@ -1055,7 +1055,7 @@ video {
 
 .hover\:bg-blue-600:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+  background-color: rgb(37 99 220 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-blue-500:hover {
