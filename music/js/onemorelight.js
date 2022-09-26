@@ -24,16 +24,16 @@ let songItems = document.querySelectorAll(".songItem");
 
 
 let songs = [
-    { songsName: "Battle Symphony", filePath: "../song/1.mp3", coverPath: "/music/covers/cover.jpg" },
-    { songsName: "Good Goodbye", filePath: "../song/2.mp3", coverPath: "/music/covers/cover.jpg" },
-    { songsName: "Halfway Right", filePath: "../song/3.mp3", coverPath: "/music/covers/cover.jpg" },
-    { songsName: "Heavy", filePath: "../song/4.mp3", coverPath: "/music/covers/cover.jpg" },
-    { songsName: "Invisible", filePath: "../song/5.mp3", coverPath: "/music/covers/cover.jpg" },
-    { songsName: "Nobody Can Save Me", filePath: "../song/6.mp3", coverPath: "/music/covers/cover.jpg" },
-    { songsName: "One More Light", filePath: "../song/7.mp3", coverPath: "/music/covers/cover.jpg" },
-    { songsName: "Sharp Edges", filePath: "../song/8.mp3", coverPath: "/music/covers/cover.jpg" },
-    { songsName: "Sorry For Now", filePath: "../song/9.mp3", coverPath: "/music/covers/cover.jpg" },
-    { songsName: "Talking to Myself", filePath: "../song/10.mp3", coverPath: "/music/covers/cover.jpg" },
+    { songsName: "Battle Symphony", filePath: "../song/1.mp3", coverPath: "/music/covers/onemorelight.jpg" },
+    { songsName: "Good Goodbye", filePath: "../song/2.mp3", coverPath: "/music/covers/onemorelight.jpg" },
+    { songsName: "Halfway Right", filePath: "../song/3.mp3", coverPath: "/music/covers/onemorelight.jpg" },
+    { songsName: "Heavy", filePath: "../song/4.mp3", coverPath: "/music/covers/onemorelight.jpg" },
+    { songsName: "Invisible", filePath: "../song/5.mp3", coverPath: "/music/covers/onemorelight.jpg" },
+    { songsName: "Nobody Can Save Me", filePath: "../song/6.mp3", coverPath: "/music/covers/onemorelight.jpg" },
+    { songsName: "One More Light", filePath: "../song/7.mp3", coverPath: "/music/covers/onemorelight.jpg" },
+    { songsName: "Sharp Edges", filePath: "../song/8.mp3", coverPath: "/music/covers/onemorelight.jpg" },
+    { songsName: "Sorry For Now", filePath: "../song/9.mp3", coverPath: "/music/covers/onemorelight.jpg" },
+    { songsName: "Talking to Myself", filePath: "../song/10.mp3", coverPath: "/music/covers/onemorelight.jpg" },
 ]
 
 songItems.forEach((element, i) =>{
@@ -163,5 +163,4 @@ previousBtn.addEventListener('click',()=>{
     // masterPlay.classList.remove('fa-circle-play')
     // masterPlay.classList.add('fa-circle-pause')
 })
-
 

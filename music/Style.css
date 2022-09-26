@@ -124,7 +124,7 @@ nav ul li{
 .nav-ul{
     display: flex;
     justify-content: space-between;
-    padding: 1rem 9rem;
+    padding: 1rem 3.7rem 2.2rem 5rem;
 }
 
 .timestamps{
@@ -149,6 +149,26 @@ nav ul li{
 }
 
 a {
-    color: white;
+    color:white;
     text-decoration: none;
+}
+
+.album-list {
+    padding-left: 100px;
+    /*padding-top: 30px;*/
+    font-family: 'Roboto Mono', monospace;
+    color: cyan;
+    display: inline-block;
+}
+
+.album-list:hover {
+    transform: scale(1.1);
+    transition: all 500ms ease-in-out;
+}
+
+#album-list {
+    padding-top: 4ch;
+    padding-bottom: 5ch;
+    font-family: 'Roboto Mono', monospace;
+    color: cyan;
 }
