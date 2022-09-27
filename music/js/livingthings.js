@@ -24,16 +24,16 @@ let songItems = document.querySelectorAll(".songItem");
 
 
 let songs = [
-    { songsName: "Papercut", filePath: "../song/1.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "Crawling", filePath: "../song/2.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "A place for my head", filePath: "../song/3.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "One step closer", filePath: "../song/4.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "FRGT/10", filePath: "../song/5.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "With You", filePath: "../song/6.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "By Myself", filePath: "../song/7.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "Cure for da Itch", filePath: "../song/8.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "In The End", filePath: "../song/9.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "Numb", filePath: "../song/10.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
+    { songsName: "Lost in the Echo", filePath: "../song/1.mp3", coverPath: "/music/covers/livingthings.jpeg" },
+    { songsName: "In My remains", filePath: "../song/2.mp3", coverPath: "/music/covers/livingthings.jpeg" },
+    { songsName: "Burn it down", filePath: "../song/3.mp3", coverPath: "/music/covers/livingthings.jpeg" },
+    { songsName: "Lies Greed and Misery", filePath: "../song/4.mp3", coverPath: "/music/covers/livingthings.jpeg" },
+    { songsName: "I'll be Gone", filePath: "../song/5.mp3", coverPath: "/music/covers/livingthings.jpeg" },
+    { songsName: "Castle of Glass", filePath: "../song/6.mp3", coverPath: "/music/covers/livingthings.jpeg" },
+    { songsName: "Victimized", filePath: "../song/7.mp3", coverPath: "/music/covers/livingthings.jpeg" },
+    { songsName: "Roads Untraveled", filePath: "../song/8.mp3", coverPath: "/music/covers/livingthings.jpeg" },
+    { songsName: "Skin to bone", filePath: "../song/9.mp3", coverPath: "/music/covers/livingthings.jpeg" },
+    { songsName: "Powerless", filePath: "../song/10.mp3", coverPath: "/music/covers/livingthings.jpeg" },
 ]
 
 songItems.forEach((element, i) =>{

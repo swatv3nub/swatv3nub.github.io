@@ -24,16 +24,16 @@ let songItems = document.querySelectorAll(".songItem");
 
 
 let songs = [
-    { songsName: "Papercut", filePath: "../song/1.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "Crawling", filePath: "../song/2.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "A place for my head", filePath: "../song/3.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "One step closer", filePath: "../song/4.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "FRGT/10", filePath: "../song/5.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "With You", filePath: "../song/6.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "By Myself", filePath: "../song/7.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "Cure for da Itch", filePath: "../song/8.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "In The End", filePath: "../song/9.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
-    { songsName: "Numb", filePath: "../song/10.mp3", coverPath: "/music/covers/hybridtheory.jpeg" },
+    { songsName: "Burning in the Skies", filePath: "../song/1.mp3", coverPath: "/music/covers/athousandsuns.jpeg" },
+    { songsName: "Iridescent", filePath: "../song/2.mp3", coverPath: "/music/covers/athousandsuns.jpeg" },
+    { songsName: "Waiting for the end", filePath: "../song/3.mp3", coverPath: "/music/covers/athousandsuns.jpeg" },
+    { songsName: "Empty Spaces", filePath: "../song/4.mp3", coverPath: "/music/covers/athousandsuns.jpeg" },
+    { songsName: "The Requiem", filePath: "../song/5.mp3", coverPath: "/music/covers/athousandsuns.jpeg" },
+    { songsName: "The Radiance", filePath: "../song/6.mp3", coverPath: "/music/covers/athousandsuns.jpeg" },
+    { songsName: "Robot Boy", filePath: "../song/7.mp3", coverPath: "/music/covers/athousandsuns.jpeg" },
+    { songsName: "Wisdom, Justice, Love", filePath: "../song/8.mp3", coverPath: "/music/covers/athousandsuns.jpeg" },
+    { songsName: "The Messenger", filePath: "../song/9.mp3", coverPath: "/music/covers/athousandsuns.jpeg" },
+    { songsName: "Blackout", filePath: "../song/10.mp3", coverPath: "/music/covers/athousandsuns.jpeg" },
 ]
 
 songItems.forEach((element, i) =>{
