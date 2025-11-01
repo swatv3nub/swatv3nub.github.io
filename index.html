@@ -1,210 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MaskedVirus</title>
-    <link rel="stylesheet" href="tailwind.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap&family=Roboto&display=swap"
-        rel="stylesheet">
+    <title>Swanit Anuran | MaskedVirus</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<body>
+    <!-- Matrix Background -->
+    <canvas id="matrix-bg"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">MaskedVirus</span>
+                <span class="logo-bracket">/&gt;</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" data-text="Home">Home</a></li>
+                <li><a href="#about" data-text="About">About</a></li>
+                <li><a href="#expertise" data-text="Expertise">Expertise</a></li>
+                <li><a href="#projects" data-text="Projects">Projects</a></li>
+                <li><a href="#contact" data-text="Contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-<body class="font-robotoMono">
-    <section class="min-h-screen bg-white dark:bg-gray-900">
-        <div class="container px-6 py-10 mx-auto">
-            <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
-                Gather
-                my
-                <span class="text-blue-500">Intel</span>
-            </h1>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="glitch-wrapper">
+                <div class="glitch" data-text="Swanit Anuran">Swanit Anuran</div>
+            </div>
+            <div class="typing-container">
+                <span class="typing-text"></span>
+                <span class="cursor">|</span>
+            </div>
+            <p class="hero-description">
+                <span class="code-symbol">{</span>
+                Crafting secure systems, exploiting vulnerabilities, producing beats
+                <span class="code-symbol">}</span>
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">72+</span>
+                    <span class="stat-label">Repositories</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">55+</span>
+                    <span class="stat-label">Followers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">19+</span>
+                    <span class="stat-label">Stars</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-terminal"></i> View Arsenal
+                </a>
+                <a href="https://github.com/swatv3nub" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-github"></i> GitHub Profile
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-button red"></span>
+                    <span class="terminal-button yellow"></span>
+                    <span class="terminal-button green"></span>
+                    <span class="terminal-title">terminal@maskedvirus</span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="terminal-prompt">~$</span> <span class="terminal-command">whoami</span></p>
+                    <p><span class="terminal-output">Swanit Anuran - MaskedVirus</span></p>
+                    <p><span class="terminal-prompt">~$</span> <span class="terminal-command">cat profile.txt</span></p>
+                    <p><span class="terminal-output">Education: B.Tech - CSE</span></p>
+                    <p><span class="terminal-output">Location: Bengaluru, Karnataka</span></p>
+                    <p><span class="terminal-prompt">~$</span> <span class="terminal-command blink">_</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-2">
-                <div
-                    class="px-12 py-8 transition-colors duration-200 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-900 dark:border-gray-700 dark:hover:border-transparent">
-                    <div class="flex flex-col sm:-mx-4 sm:flex-row">
-                        <img class="flex-shrink-0 object-cover w-24 h-24 rounded-full sm:mx-4 ring-4 ring-gray-300 select-none"
-                            src="assets/profile.jpg" alt="">
-
-                        <div class="mt-4 sm:mx-4 sm:mt-0">
-                            <h1
-                                class="text-xl font-sans font-semibold text-gray-700 capitalize md:text-2xl dark:text-white group-hover:text-white">
-                                Swanit Anuran</h1>
-
-                            <p class="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
-                                Lead - GDSC, AKU
-                            </p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">01.</span>
+                <span class="title-text">Decoding MaskedVirus</span>
+                <span class="title-line"></span>
+            </h2>
+            <div class="about-content">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="accent-text">Hello, I'm Swanit Anuran <span class="wave">👋</span></p>
+                        <p>A multi-faceted creator based in <strong>Bengaluru, Karnataka</strong>, where I merge three seemingly different worlds: <span class="highlight-text">programming, cybersecurity, and music production</span>.</p>
+                        <p>As a <strong>GitHub Developer Program Member (PRO)</strong>, I've built an arsenal of security tools and applications that push the boundaries of what's possible. From vulnerability scanners to AI-powered B2B prospect systems, my work is driven by curiosity and a desire to solve complex problems.</p>
+                        <p>When I'm not breaking (or securing) systems, you'll find me crafting beats and melodies as a music producer. This unique blend of technical precision and creative expression defines my approach to everything I build.</p>
+                    </div>
+                    <div class="about-visual">
+                        <div class="hexagon-container">
+                            <div class="hexagon">
+                                <div class="hexagon-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <p>Cyber Security</p>
+                            </div>
+                            <div class="hexagon">
+                                <div class="hexagon-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <p>Development</p>
+                            </div>
+                            <div class="hexagon">
+                                <div class="hexagon-icon">
+                                    <i class="fas fa-music"></i>
+                                </div>
+                                <p>Music Production</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <p class="mt-4 font-sans text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
-                        B. Tech CSE (5th Semester) Student at
-                        <a class="text-blue-500 dark:text-orange-400" href="https://kazirangauniversity.in/"
-                            target="_blank" rel="noopener noreferrer">
-                            Kaziranga University, Assam.
-                        </a>
-                    </p>
-                </div>
-                <p class="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300 lg:pt-5">
-                    Hi there, I am the Campus Lead at
-                    <a class="text-blue-500 dark:text-orange-400"
-                        href="https://gdsc.community.dev/the-assam-kaziranga-university-jorhat/" target="_blank"
-                        rel="noopener noreferrer">
-                        Google Developer Student Club, AKU.
-                    </a>
-                    I am eJPT, CEH v11, and CyBok
-                    LSCPC Certified.
-                    Ex Android Development Intern and Ex Network Security intern at VoxHash. I'm also a
-                    part of Google Developer Group, Guwahati as a Digital Forensics analyst.
-                    I am well known to Malware Analysis and Reverse Engineering.
-                </p>
-            </div>
-        </div>
-
-        <hr class="border-dashed hover:border-dotted h-0">
-
-        <div class="bg-gray-100 dark:bg-gray-900 lg:py-12 lg:flex lg:justify-center">
-            <div class="bg-white dark:bg-gray-800 lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
-                <div class="lg:w-1/2">
-                    <div class="h-64 bg-cover lg:rounded-lg lg:h-full"
-                        style="background-image:url('assets/skills.jpg')">
-                    </div>
-                </div>
-
-                <div class="max-w-xl px-6 py-12 lg:max-w-5xl lg:w-1/2">
-                    <h2 class="text-2xl font-roboto font-bold text-gray-800 dark:text-white md:text-3xl">Skill
-                        <span class="text-blue-600 dark:text-blue-400">Set</span>
-                    </h2>
-                    <p class="mt-4 text-gray-600 dark:text-gray-400">
-                    <ul class="dark:text-gray-300">
-                        <li>
-                            <span
-                                class="text-base pl-4 text-black capitalize dark:text-gray-300 font-semibold font-roboto">Languages:</span>
-                            Python, Ruby, C++, C, Rust, GoLang, Kotlin, React Native, HTML5 and CSS.
-                        </li>
-                        <br>
-                        <li>
-                            <span
-                                class="text-base pl-4 text-black capitalize dark:text-gray-300 font-semibold font-roboto">NextUps:</span>
-                            Flutter, R, Solidity and Swift.
-                        </li>
-                        <br>
-                        <li>
-                            <span
-                                class="text-base pl-4 text-black capitalize dark:text-gray-300 font-semibold font-roboto">Softwares:</span>
-                            Visual Studio, VS Code, Atom, FL Studio, Ableton, Audacity, DaVinci Resolve
-
-                        </li>
-                    </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <hr class="border-dashed hover:border-dotted h-0">
-
-        <div class="bg-gray-50 dark:bg-gray-900 lg:py-12 lg:flex lg:justify-center">
-            <div class="bg-white dark:bg-gray-800 lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
-                <div class="lg:w-1/2">
-                    <div class="h-64 bg-cover lg:rounded-lg lg:h-full"
-                        style="background-image:url('assets/what-i-do.jpg')">
-                    </div>
-                </div>
-
-                <div class="max-w-xl px-6 py-12 lg:max-w-5xl lg:w-1/2">
-                    <h2 class="text-2xl font-roboto font-bold text-gray-800 dark:text-white md:text-3xl">What I
-                        <span class="text-blue-600 dark:text-blue-400">Do</span>
-                    </h2>
-                    <p class="mt-4 text-gray-600 dark:text-gray-400">
-                        <br>
-                                I am an Ethical Hacker
-                                Android Developer, Graphic Desginer, Video Editor, Photographer,
-                                NLP Engineer, Music Producer<br><br>I'm also a Certified Penetration Tester and Reverse Engineer.
-                    </ul>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <hr class="border-dashed hover:border-dotted h-0">
-
-        <div class="bg-white dark:bg-gray-900">
-            <div class="container flex flex-col items-center px-4 py-12 mx-auto text-center">
-                <h2 class="text-3xl font-roboto font-semibold tracking-tight text-gray-700 sm:text-4xl dark:text-white">
-                    Contact
-                </h2>
-
-                <div class="mt-6 sm:-mx-2">
-                    <div class="inline-flex w-full sm:w-auto sm:mx-2">
-                        <a href="mailto:maskedvirus@owo.family"
-                            class="inline-flex items-center justify-center w-full px-5 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-500 focus:ring focus:ring-blue-300 focus:ring-opacity-80 select-none">
-                            Via Email
-                        </a>
-                    </div>
-
-                    <div class="inline-flex w-full mt-4 sm:w-auto sm:mx-2 sm:mt-0">
-                        <a href="tel:+918471986065"
-                            class="inline-flex items-center justify-center w-full px-5 py-2 text-gray-700 transition-colors duration-150 transform bg-white border border-gray-200 rounded-lg dark:bg-gray-900 dark:border-gray-700 hover:bg-gray-100 dark:text-white sm:w-auto dark:hover:bg-gray-800 dark:ring-gray-700 focus:ring focus:ring-gray-200 focus:ring-opacity-80 select-none">
-                            Via Call
-                        </a>
-                    </div>
-
-                    <div class="max-w-2xl mt-4 px-8 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm font-light text-gray-600 dark:text-gray-400 select-none">My
-                                Address</span>
-                        </div>
-
-                        <p class="mt-2 text-gray-600 dark:text-gray-300 text-left">
-                            Borua Bamun Gaon, Golaghat
-                            <br>
-                            Assam - 785618
-                            <br>
-                            India
-                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <hr class="border-solid hover:border-dashed h-0">
 
-    <footer class="bg-white dark:bg-gray-800">
-        <div class="container px-6 py-4 mx-auto">
-            <div class="text-center">
-                <a href="#"
-                    class="text-2xl font-bold text-gray-800 dark:text-white hover:text-gray-700 dark:hover:text-gray-300">MaskedVirus</a>
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">02.</span>
+                <span class="title-text">Technical Arsenal</span>
+                <span class="title-line"></span>
+            </h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="card-header">
+                        <i class="fas fa-user-secret"></i>
+                        <h3>Cybersecurity</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i> Penetration Testing</li>
+                            <li><i class="fas fa-chevron-right"></i> Vulnerability Assessment</li>
+                            <li><i class="fas fa-chevron-right"></i> Web Application Security</li>
+                            <li><i class="fas fa-chevron-right"></i> Security Automation</li>
+                            <li><i class="fas fa-chevron-right"></i> OSINT & Reconnaissance</li>
+                        </ul>
+                    </div>
+                    <div class="card-tech">
+                        <span>Python & PHP</span>
+                        <span>Bash & Shell Scripting</span>
+                        <span>MITRE ATT&CK</span>
+                        <span>OWASP</span>
+                        <span>Kali Linux</span>
+                    </div>
+                </div>
 
-                <p class="max-w-md mx-auto mt-2 text-gray-500 dark:text-gray-400">A Student, a Music Producer, a CEH, a
-                    Noob Programmer, what do you need more?</p>
+                <div class="expertise-card">
+                    <div class="card-header">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Full-Stack Development</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i> Web Applications</li>
+                            <li><i class="fas fa-chevron-right"></i> Mobile Development</li>
+                            <li><i class="fas fa-chevron-right"></i> API Design & Integration</li>
+                            <li><i class="fas fa-chevron-right"></i> Database Architecture</li>
+                            <li><i class="fas fa-chevron-right"></i> Cloud Deployment</li>
+                        </ul>
+                    </div>
+                    <div class="card-tech">
+                        <span>Python</span>
+                        <span>Dart/Flutter</span>
+                        <span>JavaScript</span>
+                        <span>Kotlin/Compose</span>
+                        <span>PHP</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="card-header">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI & Automation</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i> LangGraph Agent Systems</li>
+                            <li><i class="fas fa-chevron-right"></i> AI-Powered Solutions</li>
+                            <li><i class="fas fa-chevron-right"></i> Process Automation</li>
+                            <li><i class="fas fa-chevron-right"></i> Data Enrichment</li>
+                            <li><i class="fas fa-chevron-right"></i> Machine Learning</li>
+                        </ul>
+                    </div>
+                    <div class="card-tech">
+                        <span>Python</span>
+                        <span>LangChain</span>
+                        <span>APIs</span>
+                        <span>NLP</span>
+                    </div>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="card-header">
+                        <i class="fas fa-music"></i>
+                        <h3>Music Production</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><i class="fas fa-chevron-right"></i> Beat Making</li>
+                            <li><i class="fas fa-chevron-right"></i> Audio Engineering</li>
+                            <li><i class="fas fa-chevron-right"></i> Sound Design</li>
+                            <li><i class="fas fa-chevron-right"></i> Mixing & Mastering</li>
+                            <li><i class="fas fa-chevron-right"></i> Creative Direction</li>
+                        </ul>
+                    </div>
+                    <div class="card-tech">
+                        <span>FL Studio</span>
+                        <span>Ableton</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">03.</span>
+                <span class="title-text">Featured Projects</span>
+                <span class="title-line"></span>
+            </h2>
+            <div class="projects-grid">
+                <!-- IronWASP -->
+                <div class="project-card featured">
+                    <div class="project-number">01</div>
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <div class="project-status">
+                            <i class="fas fa-star"></i>
+                            <span>19 stars</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>IronWASP</h3>
+                        <p>A powerful Web Application Security testing and vulnerability assessment tool built in Python. IronWASP automates the detection of common web vulnerabilities and provides comprehensive security reports.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check"></i> Automated Scanning</span>
+                            <span><i class="fas fa-check"></i> Vulnerability Detection</span>
+                            <span><i class="fas fa-check"></i> Security Reports</span>
+                        </div>
+                        <div class="project-tags">
+                            <span><i class="fab fa-python"></i> Python</span>
+                            <span>Security</span>
+                            <span>WASP</span>
+                            <span>Pentesting</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/swatv3nub/IronWASP" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LeadSync -->
+                <div class="project-card featured">
+                    <div class="project-number">02</div>
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="project-status">
+                            <i class="fas fa-code-branch"></i>
+                            <span>1 fork</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>LeadSync</h3>
+                        <p>An end-to-end LangGraph Agent System that autonomously discovers, enriches, scores, and contacts B2B prospects. Leverages AI to automate the entire lead generation and outreach pipeline.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check"></i> AI-Powered Automation</span>
+                            <span><i class="fas fa-check"></i> Lead Enrichment</span>
+                            <span><i class="fas fa-check"></i> Smart Scoring</span>
+                        </div>
+                        <div class="project-tags">
+                            <span><i class="fab fa-python"></i> Python</span>
+                            <span>LangGraph</span>
+                            <span>AI Agents</span>
+                            <span>B2B</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/swatv3nub/LeadSync" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grim -->
+                <div class="project-card">
+                    <div class="project-number">03</div>
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>GRIM</h3>
+                        <p>Information Gathering and Vulnerability Scanning Tool designed for comprehensive reconnaissance and security assessment. Built for cybersecurity professionals and ethical hackers.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check"></i> OSINT Collection</span>
+                            <span><i class="fas fa-check"></i> Vulnerability Scanning</span>
+                            <span><i class="fas fa-check"></i> Recon Automation</span>
+                        </div>
+                        <div class="project-tags">
+                            <span><i class="fab fa-php"></i> PHP</span>
+                            <span>OSINT</span>
+                            <span>Reconnaissance</span>
+                            <span>InfoSec</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/swatv3nub/Grim" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FinTrack -->
+                <div class="project-card">
+                    <div class="project-number">04</div>
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>FinTrack</h3>
+                        <p>Smart Personal Finance & Expense Tracker App built with Flutter. Track your spending, manage budgets, and gain insights into your financial habits with beautiful visualizations.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check"></i> Expense Tracking</span>
+                            <span><i class="fas fa-check"></i> Budget Management</span>
+                            <span><i class="fas fa-check"></i> Financial Insights</span>
+                        </div>
+                        <div class="project-tags">
+                            <span><i class="fas fa-mobile-alt"></i> Dart</span>
+                            <span>Flutter</span>
+                            <span>Mobile</span>
+                            <span>Finance</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/swatv3nub/FinTrack" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> View Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <hr class="my-6 border-gray-200 dark:border-gray-700" />
+            <div class="more-projects">
+                <a href="https://github.com/swatv3nub?tab=repositories" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-github"></i> View All 72+ Repositories
+                </a>
+            </div>
+        </div>
+    </section>
 
-            <div class="flex flex-col items-center sm:flex-row sm:justify-between">
-                <p class="text-sm text-gray-400">© Copyright 2022. All Rights Reserved.</p>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">04.</span>
+                <span class="title-text">Get In Touch</span>
+                <span class="title-line"></span>
+            </h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Build Something Extraordinary</h3>
+                    <p>Whether you're looking to secure your systems, build cutting-edge applications, or collaborate on innovative projects - I'm always interested in hearing about new opportunities and challenges.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Location</strong>
+                                <span>Bengaluru, Karnataka</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Timezone</strong>
+                                <span>IST (UTC+5:30)</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <strong>Status</strong>
+                                <span>Available for Projects</span>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="flex mt-3 -mx-2 sm:mt-0">
-                    <a href="https://github.com/swatv3nub" rel="noopener noreferrer" target="_blank"
-                        class="mx-2 text-sm text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
-                        aria-label="GitHub"> GitHub </a>
+                    <div class="social-links">
+                        <a href="https://github.com/swatv3nub" target="_blank" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://linkedin.com/in/maskedvirus" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://twitter.com/i_maskedvirus" target="_blank" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="https://instagram.com/maskedvirus" target="_blank" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="http://linktr.ee/maskedvirus" target="_blank" class="social-link" title="Linktree">
+                            <i class="fas fa-link"></i>
+                            <span>Linktree</span>
+                        </a>
+                    </div>
 
-                    <a href="https://twitter.com/i_maskedvirus" rel="noopener noreferrer" target="_blank"
-                        class="mx-2 text-sm text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
-                        aria-label="Twitter"> Twitter </a>
+                    <div class="platform-badges">
+                        <a href="https://tryhackme.com/p/maskedvirus" target="_blank" class="platform-badge">
+                            <i class="fas fa-flag-checkered"></i> TryHackMe
+                        </a>
+                        <a href="https://holopin.io/@maskedvirus" target="_blank" class="platform-badge">
+                            <i class="fas fa-award"></i> Holopin Badges
+                        </a>
+                    </div>
+                </div>
 
-                    <a href="https://in.linkedin.com/in/maskedvirus" rel="noreferrer noopener" target="_blank"
-                        class="mx-2 text-sm text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
-                        aria-label="LinkedIn"> LinkedIn </a>
-                    <a href="https://instagram.com/maskedvirus" rel="noreferrer noopener" target="_blank"
-                        class="mx-2 text-sm text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
-                        aria-label="Instagram"> Instagram </a>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mgvpppkv" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Collaboration" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> <span id="btnText">Send Message</span>
+                        </button>
+                        <div id="formStatus" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p class="footer-logo">
+                        <span class="logo-bracket">&lt;</span>
+                        <span class="logo-text">MaskedVirus</span>
+                        <span class="logo-bracket">/&gt;</span>
+                    </p>
+                    <p class="footer-tagline">Building secure, innovative solutions</p>
+                </div>
+                <div class="footer-right">
+                    <p>Designed & Built by Swanit Anuran</p>
+                    <p>&copy; 2025 All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
-
 </html>
+                    
