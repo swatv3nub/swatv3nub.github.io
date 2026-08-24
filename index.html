@@ -1,562 +1,773 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swanit Anuran | MaskedVirus</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swanit Anuran — Software, Security, AI &amp; Music</title>
+  <meta name="description" content="Swanit Anuran is a developer, cybersecurity researcher, AI experimenter and music producer building systems, breaking assumptions and creating things.">
+  <link rel="canonical" href="https://sw4nit.is-a.dev/">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta name="author" content="Swanit Anuran">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sw4nit.is-a.dev/">
+  <meta property="og:title" content="SW4NIT — Software × Security × AI × Music">
+  <meta property="og:description" content="Builder. Security researcher. AI experimenter. Music producer. I build things, break things, and turn ideas into systems.">
+  <meta property="og:site_name" content="SW4NIT">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@i_maskedvirus">
+  <meta name="twitter:title" content="SW4NIT — Software × Security × AI × Music">
+  <meta name="twitter:description" content="Builder. Security researcher. AI experimenter. Music producer. Based in Bengaluru, India.">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Swanit Anuran",
+    "alternateName": ["SW4NIT", "MaskedVirus"],
+    "url": "https://sw4nit.is-a.dev/",
+    "address": { "@type": "PostalAddress", "addressLocality": "Bengaluru", "addressRegion": "Karnataka", "addressCountry": "IN" },
+    "jobTitle": "Developer & Security Researcher",
+    "sameAs": [
+      "https://github.com/swatv3nub",
+      "https://linkedin.com/in/maskedvirus",
+      "https://twitter.com/i_maskedvirus",
+      "https://instagram.com/sw4nit",
+      "https://linktr.ee/maskedvirus",
+      "https://tryhackme.com/p/maskedvirus"
+    ],
+    "knowsAbout": [
+      "Software Engineering", "Cybersecurity", "VAPT", "OSINT",
+      "AI Agents", "Automation", "Mobile Development",
+      "Music Production", "Audio DSP"
+    ]
+  }
+  </script>
 </head>
-<body>
-    <!-- Matrix Background -->
-    <canvas id="matrix-bg"></canvas>
-    
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <span class="logo-bracket">&lt;</span>
-                <span class="logo-text">MaskedVirus</span>
-                <span class="logo-bracket">/&gt;</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home" data-text="Home">Home</a></li>
-                <li><a href="#about" data-text="About">About</a></li>
-                <li><a href="#expertise" data-text="Expertise">Expertise</a></li>
-                <li><a href="#projects" data-text="Projects">Projects</a></li>
-                <li><a href="#contact" data-text="Contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+
+<body data-mode="dev">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Custom cursor (desktop only) -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"><span class="cursor-label"></span></div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__logo mono" data-magnetic>
+        SW4NIT<span class="nav__logo-dot" aria-hidden="true"></span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a class="mono nav__link" href="#work">WORK</a>
+        <a class="mono nav__link" href="#lab">LAB</a>
+        <a class="mono nav__link" href="#security">SEC</a>
+        <a class="mono nav__link" href="#music">MUSIC</a>
+        <a class="mono nav__link" href="#contact">CONTACT</a>
+      </nav>
+      <button class="nav__burger" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav class="mobile-menu__links" aria-label="Mobile">
+      <a href="#work"><em>01</em>Work</a>
+      <a href="#lab"><em>02</em>Lab</a>
+      <a href="#security"><em>03</em>Security</a>
+      <a href="#music"><em>04</em>Music</a>
+      <a href="#contact"><em>05</em>Contact</a>
     </nav>
+    <div class="mobile-menu__foot mono">
+      <span>Bengaluru · UTC+5:30</span>
+      <a href="https://github.com/swatv3nub" target="_blank" rel="noopener noreferrer">GITHUB ↗</a>
+    </div>
+  </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="glitch-wrapper">
-                <div class="glitch" data-text="Swanit Anuran">Swanit Anuran</div>
-            </div>
-            <div class="typing-container">
-                <span class="typing-text"></span>
-                <span class="cursor">|</span>
-            </div>
-            <p class="hero-description">
-                <span class="code-symbol">{</span>
-                Crafting secure systems, exploiting vulnerabilities, producing beats
-                <span class="code-symbol">}</span>
-            </p>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">72+</span>
-                    <span class="stat-label">Repositories</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">55+</span>
-                    <span class="stat-label">Followers</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">19+</span>
-                    <span class="stat-label">Stars</span>
-                </div>
-            </div>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">
-                    <i class="fas fa-terminal"></i> View Arsenal
-                </a>
-                <a href="https://github.com/swatv3nub" target="_blank" class="btn btn-secondary">
-                    <i class="fab fa-github"></i> GitHub Profile
-                </a>
-            </div>
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" aria-label="Introduction">
+      <div class="hero__grid-lines" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <div class="hero__left">
+          <p class="hero__eyebrow mono reveal">
+            <span class="accent">$</span> whoami<span class="caret" aria-hidden="true">▮</span>
+          </p>
+
+          <h1 class="hero__title">
+            <span class="hero__title-line"><span class="reveal-text">SW4NIT</span></span>
+            <span class="hero__title-sub mono reveal-delay-1">SOFTWARE <i class="x">×</i> SECURITY <i class="x">×</i> AI <i class="x">×</i> MUSIC</span>
+          </h1>
+
+          <p class="hero__statement reveal-delay-2">
+            I build secure systems, experiment with AI,
+            and make loud noises for a living.
+          </p>
+          <p class="hero__support reveal-delay-3">
+            Software engineer by curiosity. Security researcher by obsession.
+            Music producer by instinct.
+          </p>
+
+          <div class="hero__meta mono reveal-delay-3">
+            <span class="hero__loc">Bengaluru, India · UTC+5:30</span>
+            <span class="status-pill"><span class="status-pill__dot" aria-hidden="true"></span>Available for opportunities</span>
+          </div>
+
+          <div class="hero__actions reveal-delay-4">
+            <a href="#work" class="btn btn--solid" data-magnetic>Explore Work</a>
+            <a href="https://github.com/swatv3nub" target="_blank" rel="noopener noreferrer" class="btn btn--ghost" data-magnetic>GitHub&nbsp;↗</a>
+            <a href="#contact" class="link-arrow">Contact<span aria-hidden="true">→</span></a>
+            <a href="https://tryhackme.com/p/maskedvirus" target="_blank" rel="noopener noreferrer" class="link-arrow">TryHackMe<span aria-hidden="true">↗</span></a>
+          </div>
         </div>
-        <div class="hero-image">
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <span class="terminal-button red"></span>
-                    <span class="terminal-button yellow"></span>
-                    <span class="terminal-button green"></span>
-                    <span class="terminal-title">terminal@maskedvirus</span>
-                </div>
-                <div class="terminal-body">
-                    <p><span class="terminal-prompt">~$</span> <span class="terminal-command">whoami</span></p>
-                    <p><span class="terminal-output">Swanit Anuran - MaskedVirus</span></p>
-                    <p><span class="terminal-prompt">~$</span> <span class="terminal-command">cat profile.txt</span></p>
-                    <p><span class="terminal-output">Education: B.Tech - CSE</span></p>
-                    <p><span class="terminal-output">Location: Bengaluru, Karnataka</span></p>
-                    <p><span class="terminal-prompt">~$</span> <span class="terminal-command blink">_</span></p>
-                </div>
+
+        <!-- Identity terminal -->
+        <aside class="terminal reveal-delay-2" aria-label="Interactive identity panel">
+          <div class="terminal__head">
+            <span class="terminal__path mono">~/swanit/identity.cfg</span>
+            <div class="terminal__tabs" role="tablist" aria-label="Identity modes">
+              <button role="tab" id="tab-dev" aria-selected="true" aria-controls="term-body" data-mode-tab="dev" class="mono is-active">DEV</button>
+              <button role="tab" id="tab-sec" aria-selected="false" aria-controls="term-body" data-mode-tab="sec" class="mono">SEC</button>
+              <button role="tab" id="tab-ai" aria-selected="false" aria-controls="term-body" data-mode-tab="ai" class="mono">AI</button>
+              <button role="tab" id="tab-music" aria-selected="false" aria-controls="term-body" data-mode-tab="music" class="mono">MUSIC</button>
             </div>
-        </div>
+          </div>
+          <div class="terminal__body mono" id="term-body" role="tabpanel" tabindex="0" aria-labelledby="tab-dev" aria-live="polite">
+            <noscript>
+<pre>$ whoami
+swanit anuran // sw4nit
+roles:
+  > developer
+  > security researcher
+  > ai tinkerer
+  > music producer
+current_state: building...</pre>
+            </noscript>
+            <div class="terminal__lines" data-term-lines></div>
+          </div>
+          <div class="terminal__foot mono">
+            <span><kbd>/</kbd> commands</span>
+            <span class="terminal__state" data-term-state>idle</span>
+          </div>
+        </aside>
+      </div>
+
+      <canvas class="hero__scope" id="scope-canvas" aria-hidden="true"></canvas>
+      <div class="hero__scroll-hint mono" aria-hidden="true">SCROLL<span class="hero__scroll-line"></span></div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">01.</span>
-                <span class="title-text">Decoding MaskedVirus</span>
-                <span class="title-line"></span>
-            </h2>
-            <div class="about-content">
-                <div class="about-grid">
-                    <div class="about-text">
-                        <p class="accent-text">Hello, I'm Swanit Anuran <span class="wave">👋</span></p>
-                        <p>A multi-faceted creator based in <strong>Bengaluru, Karnataka</strong>, where I merge three seemingly different worlds: <span class="highlight-text">programming, cybersecurity, and music production</span>.</p>
-                        <p>I've built an arsenal of security tools and applications that push the boundaries of what's possible. From vulnerability scanners to AI-powered B2B prospect systems, my work is driven by curiosity and a desire to solve complex problems.</p>
-                        <p>When I'm not breaking (or securing) systems, you'll find me crafting beats and melodies as a music producer. This unique blend of technical precision and creative expression defines my approach to everything I build.</p>
-                    </div>
-                    <div class="about-visual">
-                        <div class="hexagon-container">
-                            <div class="hexagon">
-                                <div class="hexagon-icon">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <p>Cyber Security</p>
-                            </div>
-                            <div class="hexagon">
-                                <div class="hexagon-icon">
-                                    <i class="fas fa-code"></i>
-                                </div>
-                                <p>Development</p>
-                            </div>
-                            <div class="hexagon">
-                                <div class="hexagon-icon">
-                                    <i class="fas fa-music"></i>
-                                </div>
-                                <p>Music Production</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- ============ MODES ============ -->
+    <section class="modes section" id="modes" aria-label="Four operating modes">
+      <div class="section-head">
+        <span class="section-head__index mono">00 / OPERATING MODES</span>
+        <h2 class="visually-hidden">Four operating modes</h2>
+      </div>
+      <ol class="modes__list">
+        <li class="mode-row" data-mode-link="dev">
+          <a href="#work" class="mode-row__inner">
+            <span class="mode-row__num mono">01</span>
+            <h3 class="mode-row__name">BUILD</h3>
+            <p class="mode-row__desc">Applications, APIs, mobile apps and cloud — software people actually use.</p>
+            <span class="mode-row__tags mono">FLUTTER · GO · NODE · REST</span>
+            <span class="mode-row__arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="mode-row" data-mode-link="sec">
+          <a href="#security" class="mode-row__inner">
+            <span class="mode-row__num mono">02</span>
+            <h3 class="mode-row__name">BREAK</h3>
+            <p class="mode-row__desc">Pentesting, recon, VAPT and OSINT — understanding systems by attacking them.</p>
+            <span class="mode-row__tags mono">OWASP · MITRE ATT&amp;CK · OSINT</span>
+            <span class="mode-row__arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="mode-row" data-mode-link="ai">
+          <a href="#lab" class="mode-row__inner">
+            <span class="mode-row__num mono">03</span>
+            <h3 class="mode-row__name">THINK</h3>
+            <p class="mode-row__desc">Agents, automation and NLP — teaching software to do the boring parts.</p>
+            <span class="mode-row__tags mono">LANGGRAPH · AGENTS · NLP</span>
+            <span class="mode-row__arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li class="mode-row" data-mode-link="music">
+          <a href="#music" class="mode-row__inner">
+            <span class="mode-row__num mono">04</span>
+            <h3 class="mode-row__name">CREATE</h3>
+            <p class="mode-row__desc">Production, sound design and audio DSP — the other side of the system.</p>
+            <span class="mode-row__tags mono">FL STUDIO · ABLETON · VST</span>
+            <span class="mode-row__arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ol>
     </section>
 
-    <!-- Expertise Section -->
-    <section id="expertise" class="expertise">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">02.</span>
-                <span class="title-text">Technical Arsenal</span>
-                <span class="title-line"></span>
-            </h2>
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <div class="card-header">
-                        <i class="fas fa-user-secret"></i>
-                        <h3>Cybersecurity</h3>
-                    </div>
-                    <div class="card-content">
-                        <ul>
-                            <li><i class="fas fa-chevron-right"></i> Penetration Testing</li>
-                            <li><i class="fas fa-chevron-right"></i> Vulnerability Assessment</li>
-                            <li><i class="fas fa-chevron-right"></i> Web Application Security</li>
-                            <li><i class="fas fa-chevron-right"></i> Security Automation</li>
-                            <li><i class="fas fa-chevron-right"></i> OSINT & Reconnaissance</li>
-                        </ul>
-                    </div>
-                    <div class="card-tech">
-                        <span>Python & PHP</span>
-                        <span>Bash & Shell Scripting</span>
-                        <span>MITRE ATT&CK</span>
-                        <span>OWASP</span>
-                        <span>Kali Linux</span>
-                    </div>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="card-header">
-                        <i class="fas fa-laptop-code"></i>
-                        <h3>Full-Stack Development</h3>
-                    </div>
-                    <div class="card-content">
-                        <ul>
-                            <li><i class="fas fa-chevron-right"></i> Web Applications</li>
-                            <li><i class="fas fa-chevron-right"></i> Mobile Development</li>
-                            <li><i class="fas fa-chevron-right"></i> API Design & Integration</li>
-                            <li><i class="fas fa-chevron-right"></i> Database Architecture</li>
-                            <li><i class="fas fa-chevron-right"></i> Cloud Deployment</li>
-                        </ul>
-                    </div>
-                    <div class="card-tech">
-                        <span>Python</span>
-                        <span>Dart/Flutter</span>
-                        <span>JavaScript</span>
-                        <span>Kotlin/Compose</span>
-                        <span>PHP</span>
-                    </div>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="card-header">
-                        <i class="fas fa-robot"></i>
-                        <h3>AI & Automation</h3>
-                    </div>
-                    <div class="card-content">
-                        <ul>
-                            <li><i class="fas fa-chevron-right"></i> LangGraph Agent Systems</li>
-                            <li><i class="fas fa-chevron-right"></i> AI-Powered Solutions</li>
-                            <li><i class="fas fa-chevron-right"></i> Process Automation</li>
-                            <li><i class="fas fa-chevron-right"></i> Data Enrichment</li>
-                            <li><i class="fas fa-chevron-right"></i> Machine Learning</li>
-                        </ul>
-                    </div>
-                    <div class="card-tech">
-                        <span>Python</span>
-                        <span>LangChain</span>
-                        <span>APIs</span>
-                        <span>NLP</span>
-                    </div>
-                </div>
-
-                <div class="expertise-card">
-                    <div class="card-header">
-                        <i class="fas fa-music"></i>
-                        <h3>Music Production</h3>
-                    </div>
-                    <div class="card-content">
-                        <ul>
-                            <li><i class="fas fa-chevron-right"></i> Beat Making</li>
-                            <li><i class="fas fa-chevron-right"></i> Audio Engineering</li>
-                            <li><i class="fas fa-chevron-right"></i> Sound Design</li>
-                            <li><i class="fas fa-chevron-right"></i> Mixing & Mastering</li>
-                            <li><i class="fas fa-chevron-right"></i> Creative Direction</li>
-                        </ul>
-                    </div>
-                    <div class="card-tech">
-                        <span>FL Studio</span>
-                        <span>Ableton</span>
-                    </div>
-                </div>
-            </div>
+    <!-- ============ ABOUT ============ -->
+    <section class="about section" id="about">
+      <div class="section-head">
+        <span class="section-head__index mono">01 / CONTEXT</span>
+        <h2 class="section-head__title">A little context.</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__text reveal">
+          <p>
+            I'm <strong>Swanit Anuran</strong> — a developer from Bengaluru with a computer science
+            background and too many interests. I build with Python, Go, Kotlin and Dart, explore
+            security tooling, and experiment with LangGraph agent pipelines.
+          </p>
+          <p>
+            I like going deep on systems: figuring out how an API actually behaves, where a web app
+            leaks, how an automation pipeline should be wired, or what makes an audio plugin feel right.
+          </p>
+          <p>
+            Music has been the other constant — years of producing electronic music taught me more
+            about structure, timing and taste than any textbook did.
+          </p>
         </div>
+        <figure class="about__quote reveal-delay-1">
+          <blockquote>
+            Technology and creativity aren't separate things for me.
+          </blockquote>
+          <figcaption class="mono">— the whole point, really</figcaption>
+        </figure>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">03.</span>
-                <span class="title-text">Featured Projects</span>
-                <span class="title-line"></span>
-            </h2>
-            <div class="projects-grid">
-                <!-- IronWASP -->
-                <div class="project-card featured">
-                    <div class="project-number">01</div>
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-bug"></i>
-                        </div>
-                        <div class="project-status">
-                            <i class="fas fa-star"></i>
-                            <span>19 stars</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>IronWASP</h3>
-                        <p>A powerful Web Application Security testing and vulnerability assessment tool built in Python. IronWASP automates the detection of common web vulnerabilities and provides comprehensive security reports.</p>
-                        <div class="project-features">
-                            <span><i class="fas fa-check"></i> Automated Scanning</span>
-                            <span><i class="fas fa-check"></i> Vulnerability Detection</span>
-                            <span><i class="fas fa-check"></i> Security Reports</span>
-                        </div>
-                        <div class="project-tags">
-                            <span><i class="fab fa-python"></i> Python</span>
-                            <span>Security</span>
-                            <span>WASP</span>
-                            <span>Pentesting</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/swatv3nub/IronWASP" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Source
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <!-- ============ FEATURED WORK ============ -->
+    <section class="work section" id="work">
+      <div class="section-head">
+        <span class="section-head__index mono">02 / SELECTED WORK</span>
+        <h2 class="section-head__title">Things I've built.</h2>
+        <p class="section-head__note mono">SELECT A PROJECT FOR THE FULL STORY</p>
+      </div>
 
-                <!-- LeadSync -->
-                <div class="project-card featured">
-                    <div class="project-number">02</div>
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div class="project-status">
-                            <i class="fas fa-code-branch"></i>
-                            <span>1 fork</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>LeadSync</h3>
-                        <p>An end-to-end LangGraph Agent System that autonomously discovers, enriches, scores, and contacts B2B prospects. Leverages AI to automate the entire lead generation and outreach pipeline.</p>
-                        <div class="project-features">
-                            <span><i class="fas fa-check"></i> AI-Powered Automation</span>
-                            <span><i class="fas fa-check"></i> Lead Enrichment</span>
-                            <span><i class="fas fa-check"></i> Smart Scoring</span>
-                        </div>
-                        <div class="project-tags">
-                            <span><i class="fab fa-python"></i> Python</span>
-                            <span>LangGraph</span>
-                            <span>AI Agents</span>
-                            <span>B2B</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/swatv3nub/LeadSync" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Source
-                            </a>
-                        </div>
-                    </div>
-                </div>
+      <div class="projects">
 
-                <!-- Grim -->
-                <div class="project-card">
-                    <div class="project-number">03</div>
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Reconix</h3>
-                        <p>Information Gathering and Vulnerability Scanning Tool designed for comprehensive reconnaissance and security assessment. Built for cybersecurity professionals and ethical hackers.</p>
-                        <div class="project-features">
-                            <span><i class="fas fa-check"></i> OSINT Collection</span>
-                            <span><i class="fas fa-check"></i> Vulnerability Scanning</span>
-                            <span><i class="fas fa-check"></i> Recon Automation</span>
-                        </div>
-                        <div class="project-tags">
-                            <span><i class="fab fa-golang"></i> Go</span>
-                            <span>OSINT</span>
-                            <span>Reconnaissance</span>
-                            <span>InfoSec</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/ReconixLabs/Reconix" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Source
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        <!-- 01 RECONIX -->
+        <article class="project" data-id="reconix" data-project-open="reconix" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Open Reconix project details" data-skill-flash="go osint recon security python">
+          <span class="project__num mono">01</span>
+          <div class="project__main">
+            <h3 class="project__name">Reconix<sup class="project__live mono">ACTIVE</sup></h3>
+            <p class="project__desc">Information gathering and vulnerability scanning built for real reconnaissance workflows — one Go binary instead of twelve browser tabs.</p>
+          </div>
+          <div class="project__meta mono">
+            <span class="project__cat">CYBERSECURITY / RECON</span>
+            <span class="project__tech">GO · OSINT · SECURITY</span>
+            <a class="project__gh" href="https://github.com/ReconixLabs/reconix" target="_blank" rel="noopener noreferrer" data-cursor="code" aria-label="Reconix on GitHub">[GITHUB ↗]</a>
+          </div>
+          <svg class="project__motif" viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="60" r="46" fill="none" stroke="currentColor" stroke-opacity=".25"/>
+            <circle cx="60" cy="60" r="30" fill="none" stroke="currentColor" stroke-opacity=".35"/>
+            <circle cx="60" cy="60" r="14" fill="none" stroke="currentColor"/>
+            <line x1="60" y1="14" x2="60" y2="106" stroke="currentColor" stroke-opacity=".2"/>
+            <line x1="14" y1="60" x2="106" y2="60" stroke="currentColor" stroke-opacity=".2"/>
+            <circle cx="82" cy="38" r="3" fill="var(--accent)"/>
+            <circle cx="40" cy="76" r="3" fill="var(--accent)" opacity=".6"/>
+          </svg>
+        </article>
 
-                <!-- FinTrack -->
-                <div class="project-card">
-                    <div class="project-number">04</div>
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-wallet"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>FinTrack</h3>
-                        <p>Smart Personal Finance & Expense Tracker App built with Flutter. Track your spending, manage budgets, and gain insights into your financial habits with beautiful visualizations.</p>
-                        <div class="project-features">
-                            <span><i class="fas fa-check"></i> Expense Tracking</span>
-                            <span><i class="fas fa-check"></i> Budget Management</span>
-                            <span><i class="fas fa-check"></i> Financial Insights</span>
-                        </div>
-                        <div class="project-tags">
-                            <span><i class="fas fa-mobile-alt"></i> Dart</span>
-                            <span>Flutter</span>
-                            <span>Mobile</span>
-                            <span>Finance</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/swatv3nub/FinTrack" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Source
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- ActiQ -->
-                <div class="project-card">
-                    <div class="project-number">05</div>
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>ActiQ</h3>
-                        <p>A modular AI agent built for real-world decision-making, context handling, and workflow automation.</p>
-                        <div class="project-features">
-                            <span><i class="fas fa-check"></i> Modular Agents</span>
-                            <span><i class="fas fa-check"></i> Context Handling</span>
-                            <span><i class="fas fa-check"></i> Workflow Automation</span>
-                        </div>
-                        <div class="project-tags">
-                            <span><i class="fab fa-python"></i> Python</span>
-                            <span>AI</span>
-                            <span>Automation</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/swatv3nub/ActiQ" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Source
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        <!-- 02 LEADSYNC -->
+        <article class="project" data-id="leadsync" data-project-open="leadsync" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Open LeadSync project details" data-skill-flash="python langgraph langchain ai agents nlp automation apis node react">
+          <span class="project__num mono">02</span>
+          <div class="project__main">
+            <h3 class="project__name">LeadSync</h3>
+            <p class="project__desc">An end-to-end AI agent workflow that discovers, enriches, scores and processes B2B prospects — a LangGraph state machine doing the boring parts.</p>
+          </div>
+          <div class="project__meta mono">
+            <span class="project__cat">AI / AUTOMATION</span>
+            <span class="project__tech">PYTHON · LANGGRAPH · AGENTS</span>
+            <a class="project__gh" href="https://github.com/swatv3nub/LeadSync" target="_blank" rel="noopener noreferrer" data-cursor="code" aria-label="LeadSync on GitHub">[GITHUB ↗]</a>
+          </div>
+          <svg class="project__motif" viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="24" cy="60" r="8" fill="none" stroke="currentColor"/>
+            <circle cx="62" cy="26" r="7" fill="none" stroke="currentColor" stroke-opacity=".6"/>
+            <circle cx="66" cy="94" r="7" fill="none" stroke="currentColor" stroke-opacity=".6"/>
+            <circle cx="98" cy="60" r="9" fill="none" stroke="var(--accent)"/>
+            <path d="M32 56 L56 30 M32 64 L58 90 M69 28 L92 54 M70 91 L93 67" fill="none" stroke="currentColor" stroke-opacity=".35"/>
+          </svg>
+        </article>
 
-                <!-- RoomReflex -->
-                <div class="project-card">
-                    <div class="project-number">06</div>
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-headphones"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>RoomReflex</h3>
-                        <p>A dynamic VST plugin that models and adapts room acoustics in real-time based on input audio and performance behavior.</p>
-                        <div class="project-features">
-                            <span><i class="fas fa-check"></i> Real-time Acoustics</span>
-                            <span><i class="fas fa-check"></i> Adaptive Modeling</span>
-                            <span><i class="fas fa-check"></i> VST Plugin</span>
-                        </div>
-                        <div class="project-tags">
-                            <span><i class="fas fa-code"></i> C++</span>
-                            <span>Audio</span>
-                            <span>DSP</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/swatv3nub/RoomReflex" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Source
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- 03 ROOMREFLEX -->
+        <article class="project" data-id="roomreflex" data-project-open="roomreflex" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Open RoomReflex project details" data-skill-flash="c++ audio dsp vst fl studio ableton creative">
+          <span class="project__num mono">03</span>
+          <div class="project__main">
+            <h3 class="project__name">RoomReflex<sup class="project__tag mono">BUILD×MUSIC</sup></h3>
+            <p class="project__desc">A VST experiment modelling adaptive room acoustics from live audio input and performance behaviour — where my code brain and music brain finally shook hands.</p>
+          </div>
+          <div class="project__meta mono">
+            <span class="project__cat">CREATIVE TECH / AUDIO DSP</span>
+            <span class="project__tech">C++ · DSP · VST</span>
+            <a class="project__gh" href="https://github.com/swatv3nub/RoomReflex" target="_blank" rel="noopener noreferrer" data-cursor="code" aria-label="RoomReflex on GitHub">[GITHUB ↗]</a>
+          </div>
+          <svg class="project__motif" viewBox="0 0 120 120" aria-hidden="true">
+            <polyline points="10,60 22,42 34,74 46,34 58,86 70,50 82,68 94,44 110,60" fill="none" stroke="currentColor" stroke-opacity=".5"/>
+            <polyline points="10,72 22,60 34,80 46,56 58,92 70,64 82,78 94,58 110,72" fill="none" stroke="var(--accent)" stroke-opacity=".8"/>
+            <line x1="10" y1="104" x2="110" y2="104" stroke="currentColor" stroke-opacity=".25"/>
+          </svg>
+        </article>
 
-                
+        <!-- 04 FINTRACK -->
+        <article class="project" data-id="fintrack" data-project-open="fintrack" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Open FinTrack project details" data-skill-flash="dart flutter mobile firebase kotlin android jetpack compose rest">
+          <span class="project__num mono">04</span>
+          <div class="project__main">
+            <h3 class="project__name">FinTrack</h3>
+            <p class="project__desc">Personal finance app focused on budgeting, spending analysis and insights — fast entry first, dashboards second.</p>
+          </div>
+          <div class="project__meta mono">
+            <span class="project__cat">MOBILE / PRODUCT</span>
+            <span class="project__tech">FLUTTER · DART · MOBILE</span>
+            <a class="project__gh" href="https://github.com/swatv3nub/FinTrack" target="_blank" rel="noopener noreferrer" data-cursor="code" aria-label="FinTrack on GitHub">[GITHUB ↗]</a>
+          </div>
+          <svg class="project__motif" viewBox="0 0 120 120" aria-hidden="true">
+            <rect x="18" y="70" width="12" height="36" fill="none" stroke="currentColor" stroke-opacity=".5"/>
+            <rect x="38" y="52" width="12" height="54" fill="none" stroke="currentColor"/>
+            <rect x="58" y="62" width="12" height="44" fill="none" stroke="currentColor" stroke-opacity=".5"/>
+            <rect x="78" y="34" width="12" height="72" fill="none" stroke="var(--accent)"/>
+            <polyline points="20,40 44,26 66,32 92,16" fill="none" stroke="currentColor" stroke-opacity=".4"/>
+          </svg>
+        </article>
 
-            <div class="more-projects">
-                <a href="https://github.com/swatv3nub?tab=repositories" target="_blank" class="btn btn-outline">
-                    <i class="fab fa-github"></i> View All 74+ Repositories
-                </a>
-            </div>
-        </div>
+        <!-- 05 ACTIQ -->
+        <article class="project" data-id="actiq" data-project-open="actiq" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Open ActiQ project details" data-skill-flash="python langchain agents ai automation nlp docker linux">
+          <span class="project__num mono">05</span>
+          <div class="project__main">
+            <h3 class="project__name">ActiQ</h3>
+            <p class="project__desc">Modular AI agent experiments around context handling, decision-making and workflow automation — small parts, sharp edges.</p>
+          </div>
+          <div class="project__meta mono">
+            <span class="project__cat">AI / AGENTS</span>
+            <span class="project__tech">PYTHON · AUTOMATION</span>
+            <a class="project__gh" href="https://github.com/swatv3nub/ActiQ" target="_blank" rel="noopener noreferrer" data-cursor="code" aria-label="ActiQ on GitHub">[GITHUB ↗]</a>
+          </div>
+          <svg class="project__motif" viewBox="0 0 120 120" aria-hidden="true">
+            <rect x="48" y="12" width="24" height="24" fill="none" stroke="currentColor" transform="rotate(45 60 24)"/>
+            <rect x="48" y="84" width="24" height="24" fill="none" stroke="currentColor" transform="rotate(45 60 96)"/>
+            <rect x="12" y="48" width="24" height="24" fill="none" stroke="currentColor" stroke-opacity=".5" transform="rotate(45 24 60)"/>
+            <rect x="84" y="48" width="24" height="24" fill="none" stroke="var(--accent)" transform="rotate(45 96 60)"/>
+            <path d="M42 42 L33 51 M78 42 L87 51 M42 78 L33 69 M78 78 L87 69" stroke="currentColor" stroke-opacity=".35"/>
+          </svg>
+        </article>
+
+        <!-- 06 IRONWASP -->
+        <article class="project" data-id="ironwasp" data-project-open="ironwasp" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Open IronWASP project details" data-skill-flash="python owasp web security vapt mitre kali php javascript">
+          <span class="project__num mono">06</span>
+          <div class="project__main">
+            <h3 class="project__name">IronWASP<sup class="project__tag mono">ORIGIN STORY</sup></h3>
+            <p class="project__desc">Web application security testing and vulnerability assessment tooling — where the security obsession started, in plain Python.</p>
+          </div>
+          <div class="project__meta mono">
+            <span class="project__cat">SECURITY RESEARCH</span>
+            <span class="project__tech">PYTHON · WEB SECURITY</span>
+            <a class="project__gh" href="https://github.com/swatv3nub/IronWASP" target="_blank" rel="noopener noreferrer" data-cursor="code" aria-label="IronWASP on GitHub">[GITHUB ↗]</a>
+          </div>
+          <svg class="project__motif" viewBox="0 0 120 120" aria-hidden="true">
+            <rect x="30" y="30" width="60" height="60" fill="none" stroke="currentColor" stroke-opacity=".4"/>
+            <line x1="60" y1="22" x2="60" y2="98" stroke="currentColor" stroke-opacity=".3"/>
+            <line x1="22" y1="60" x2="98" y2="60" stroke="currentColor" stroke-opacity=".3"/>
+            <circle cx="60" cy="60" r="10" fill="none" stroke="var(--accent)"/>
+            <circle cx="60" cy="60" r="2.5" fill="var(--accent)"/>
+          </svg>
+        </article>
+      </div>
+
+      <a class="more-link link-arrow" href="https://github.com/swatv3nub?tab=repositories" target="_blank" rel="noopener noreferrer">
+        Explore the rest of the experiments <span aria-hidden="true">→</span>
+      </a>
+
+      <!-- Project detail templates -->
+      <template id="tpl-reconix">
+        <h3 class="pmodal__name">Reconix</h3>
+        <p class="pmodal__cat mono">CYBERSECURITY / RECONNAISSANCE — <span class="accent">ACTIVE DEVELOPMENT @RECONIXLABS</span></p>
+        <dl class="pmodal__blocks">
+          <dt class="mono">PROBLEM</dt><dd>Good recon means stitching together a dozen tools, tabs and half-documented APIs. Context gets lost between steps and findings never line up.</dd>
+          <dt class="mono">APPROACH</dt><dd>One focused Go CLI that chains information gathering and vulnerability scanning into structured output. Modules stay independent so new sources plug in without rewriting the core.</dd>
+          <dt class="mono">TECH</dt><dd>Go · OSINT sources · concurrent scanning · structured reporting</dd>
+          <dt class="mono">WHAT I LEARNED</dt><dd>Tooling people actually use wins over clever tooling. Also: recon is 80% data hygiene, not scanning.</dd>
+        </dl>
+        <a class="btn btn--ghost pmodal__link" href="https://github.com/ReconixLabs/reconix" target="_blank" rel="noopener noreferrer">View repository ↗</a>
+      </template>
+
+      <template id="tpl-leadsync">
+        <h3 class="pmodal__name">LeadSync</h3>
+        <p class="pmodal__cat mono">AI / AUTOMATION — LANGGRAPH AGENT SYSTEM</p>
+        <dl class="pmodal__blocks">
+          <dt class="mono">PROBLEM</dt><dd>B2B prospecting is manual grind: find companies, enrich data, score fit, draft outreach. Every step is its own tab and none of them talk to each other.</dd>
+          <dt class="mono">APPROACH</dt><dd>A LangGraph state machine orchestrating specialised agents through discovery → enrichment → scoring → processing, with explicit state transitions instead of one giant prompt hoping for the best.</dd>
+          <dt class="mono">TECH</dt><dd>Python · LangGraph · agent orchestration · REST APIs · enrichment pipelines</dd>
+          <dt class="mono">WHAT I LEARNED</dt><dd>Agent systems are workflow engineering wearing an AI costume. Guardrails and clear state beat clever prompts every time.</dd>
+        </dl>
+        <a class="btn btn--ghost pmodal__link" href="https://github.com/swatv3nub/LeadSync" target="_blank" rel="noopener noreferrer">View repository ↗</a>
+      </template>
+
+      <template id="tpl-roomreflex">
+        <h3 class="pmodal__name">RoomReflex</h3>
+        <p class="pmodal__cat mono">CREATIVE TECHNOLOGY / AUDIO DSP — VST EXPERIMENT</p>
+        <dl class="pmodal__blocks">
+          <dt class="mono">PROBLEM</dt><dd>Room acoustics in plugins are static presets. They ignore what you're actually playing and how the performance changes.</dd>
+          <dt class="mono">APPROACH</dt><dd>A VST plugin that analyses incoming audio and performance behaviour, then adapts its room-acoustic model in real time instead of sitting on one fixed impulse response.</dd>
+          <dt class="mono">TECH</dt><dd>C++ · audio DSP · VST development · real-time analysis</dd>
+          <dt class="mono">WHAT I LEARNED</dt><dd>Real-time audio is unforgiving — buffers, latency and CPU budgets keep you honest. This is the project where engineering and music stopped being two hobbies.</dd>
+        </dl>
+        <a class="btn btn--ghost pmodal__link" href="https://github.com/swatv3nub/RoomReflex" target="_blank" rel="noopener noreferrer">View repository ↗</a>
+      </template>
+
+      <template id="tpl-fintrack">
+        <h3 class="pmodal__name">FinTrack</h3>
+        <p class="pmodal__cat mono">MOBILE / PRODUCT — FLUTTER</p>
+        <dl class="pmodal__blocks">
+          <dt class="mono">PROBLEM</dt><dd>Most expense trackers are either toy demos or accounting software in disguise. Logging a purchase takes longer than making it.</dd>
+          <dt class="mono">APPROACH</dt><dd>A Flutter app designed around fast entry first: budgets, spending analysis and insight visualisations layered on top of a frictionless capture flow.</dd>
+          <dt class="mono">TECH</dt><dd>Flutter · Dart · local persistence · data visualisation</dd>
+          <dt class="mono">WHAT I LEARNED</dt><dd>Product thinking changes engineering. UX constraints are the best teacher of technical restraint.</dd>
+        </dl>
+        <a class="btn btn--ghost pmodal__link" href="https://github.com/swatv3nub/FinTrack" target="_blank" rel="noopener noreferrer">View repository ↗</a>
+      </template>
+
+      <template id="tpl-actiq">
+        <h3 class="pmodal__name">ActiQ</h3>
+        <p class="pmodal__cat mono">AI / AGENTS — MODULAR EXPERIMENTATION</p>
+        <dl class="pmodal__blocks">
+          <dt class="mono">PROBLEM</dt><dd>Monolithic agents break the moment context grows or requirements shift. One prompt can't hold a whole workflow.</dd>
+          <dt class="mono">APPROACH</dt><dd>Modular agent architecture with explicit context handling, decision points and composable workflow steps — swap a module without nuking the pipeline.</dd>
+          <dt class="mono">TECH</dt><dd>Python · agent design patterns · workflow automation</dd>
+          <dt class="mono">WHAT I LEARNED</dt><dd>Context windows force honesty about what a system actually needs to know. Decomposition is the whole game.</dd>
+        </dl>
+        <a class="btn btn--ghost pmodal__link" href="https://github.com/swatv3nub/ActiQ" target="_blank" rel="noopener noreferrer">View repository ↗</a>
+      </template>
+
+      <template id="tpl-ironwasp">
+        <h3 class="pmodal__name">IronWASP</h3>
+        <p class="pmodal__cat mono">SECURITY RESEARCH — EARLY TOOLING</p>
+        <dl class="pmodal__blocks">
+          <dt class="mono">PROBLEM</dt><dd>Reading about web vulnerabilities teaches nothing. I wanted to understand scanners by building one, not by clicking "scan" in someone else's.</dd>
+          <dt class="mono">APPROACH</dt><dd>Built web application security testing and vulnerability assessment tooling in Python — automated detection of common web vulnerabilities with reportable output. A learning-era project that kicked off everything security-related since.</dd>
+          <dt class="mono">TECH</dt><dd>Python · web security · vulnerability assessment · OWASP methodology</dd>
+          <dt class="mono">WHAT I LEARNED</dt><dd>The fastest way to learn attack surfaces is to write code that probes them. This repo is where BUILD and BREAK became one habit.</dd>
+        </dl>
+        <a class="btn btn--ghost pmodal__link" href="https://github.com/swatv3nub/IronWASP" target="_blank" rel="noopener noreferrer">View repository ↗</a>
+      </template>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">04.</span>
-                <span class="title-text">Get In Touch</span>
-                <span class="title-line"></span>
-            </h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's Build Something Extraordinary</h3>
-                    <p>Whether you're looking to secure your systems, build cutting-edge applications, or collaborate on innovative projects - I'm always interested in hearing about new opportunities and challenges.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Location</strong>
-                                <span>Bengaluru, Karnataka</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <strong>Timezone</strong>
-                                <span>IST (UTC+5:30)</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-briefcase"></i>
-                            <div>
-                                <strong>Status</strong>
-                                <span>Available for Projects</span>
-                            </div>
-                        </div>
-                    </div>
+    <!-- ============ LAB (SKILLS + GITHUB) ============ -->
+    <section class="lab section" id="lab">
+      <div class="section-head">
+        <span class="section-head__index mono">03 / THE LAB</span>
+        <h2 class="section-head__title">Tools of the trade.</h2>
+        <p class="section-head__note mono">TIP: CLICK A SKILL TO SEE WHERE IT SHOWS UP</p>
+      </div>
 
-                    <div class="social-links">
-                        <a href="https://github.com/swatv3nub" target="_blank" class="social-link" title="GitHub">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://linkedin.com/in/maskedvirus" target="_blank" class="social-link" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://twitter.com/i_maskedvirus" target="_blank" class="social-link" title="Twitter">
-                            <i class="fab fa-twitter"></i>
-                            <span>Twitter</span>
-                        </a>
-                        <a href="https://instagram.com/sw4nit" target="_blank" class="social-link" title="Instagram">
-                            <i class="fab fa-instagram"></i>
-                            <span>Instagram</span>
-                        </a>
-                        <a href="http://linktr.ee/maskedvirus" target="_blank" class="social-link" title="Linktree">
-                            <i class="fas fa-link"></i>
-                            <span>Linktree</span>
-                        </a>
-                    </div>
-
-                    <div class="platform-badges">
-                        <a href="https://tryhackme.com/p/maskedvirus" target="_blank" class="platform-badge">
-                            <i class="fas fa-flag-checkered"></i> TryHackMe
-                        </a>
-                    </div>
-                </div>
-
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mgvpppkv" method="POST">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="John Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="Project Collaboration" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="submitBtn">
-                            <i class="fas fa-paper-plane"></i> <span id="btnText">Send Message</span>
-                        </button>
-                        <div id="formStatus" class="form-status"></div>
-                    </form>
-                </div>
-            </div>
+      <div class="skills" id="skills">
+        <div class="skill-group reveal">
+          <h3 class="skill-group__title mono">LANGUAGES</h3>
+          <ul>
+            <li><button class="skill" data-links="leadsync actiq reconix">Python</button></li>
+            <li><button class="skill" data-links="reconix">Go</button></li>
+            <li><button class="skill" data-links="fintrack">Kotlin</button></li>
+            <li><button class="skill" data-links="fintrack">Dart</button></li>
+            <li><button class="skill" data-links="ironwasp">JavaScript</button></li>
+            <li><button class="skill" data-links="ironwasp">PHP</button></li>
+            <li><button class="skill" data-links="roomreflex">C++</button></li>
+          </ul>
         </div>
+        <div class="skill-group reveal">
+          <h3 class="skill-group__title mono">SECURITY</h3>
+          <ul>
+            <li><button class="skill" data-links="ironwasp reconix">OWASP</button></li>
+            <li><button class="skill" data-links="ironwasp">MITRE ATT&amp;CK</button></li>
+            <li><button class="skill" data-links="ironwasp">VAPT</button></li>
+            <li><button class="skill" data-links="ironwasp">Web AppSec</button></li>
+            <li><button class="skill" data-links="reconix">OSINT</button></li>
+            <li><button class="skill" data-links="reconix">Reconnaissance</button></li>
+            <li><button class="skill" data-links="reconix">Security Automation</button></li>
+            <li><button class="skill" data-links="ironwasp reconix">Kali Linux</button></li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3 class="skill-group__title mono">DEVELOPMENT</h3>
+          <ul>
+            <li><button class="skill" data-links="fintrack">Flutter</button></li>
+            <li><button class="skill" data-links="fintrack">Android</button></li>
+            <li><button class="skill" data-links="fintrack">Jetpack Compose</button></li>
+            <li><button class="skill" data-links="fintrack leadsync">Firebase</button></li>
+            <li><button class="skill" data-links="leadsync actiq">REST APIs</button></li>
+            <li><button class="skill" data-links="ironwasp">Node.js</button></li>
+            <li><button class="skill" data-links="">React</button></li>
+            <li><button class="skill" data-links="leadsync">Docker</button></li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3 class="skill-group__title mono">AI</h3>
+          <ul>
+            <li><button class="skill" data-links="leadsync">LangGraph</button></li>
+            <li><button class="skill" data-links="actiq leadsync">LangChain</button></li>
+            <li><button class="skill" data-links="leadsync actiq">NLP</button></li>
+            <li><button class="skill" data-links="leadsync actiq">AI Agents</button></li>
+            <li><button class="skill" data-links="leadsync">Automation</button></li>
+            <li><button class="skill" data-links="leadsync">Data Enrichment</button></li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3 class="skill-group__title mono">CLOUD / DEVOPS</h3>
+          <ul>
+            <li><button class="skill" data-links="">AWS</button></li>
+            <li><button class="skill" data-links="leadsync">Docker</button></li>
+            <li><button class="skill" data-links="">Git</button></li>
+            <li><button class="skill" data-links="">CI/CD</button></li>
+            <li><button class="skill" data-links="reconix">Linux</button></li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3 class="skill-group__title mono">CREATIVE TECH</h3>
+          <ul>
+            <li><button class="skill" data-links="roomreflex">C++</button></li>
+            <li><button class="skill" data-links="roomreflex">Audio DSP</button></li>
+            <li><button class="skill" data-links="roomreflex">VST</button></li>
+            <li><button class="skill" data-links="roomreflex">FL Studio</button></li>
+            <li><button class="skill" data-links="roomreflex">Ableton</button></li>
+          </ul>
+        </div>
+      </div>
+      <p class="skills__hint mono" id="skills-hint" role="status" aria-live="polite"></p>
+
+      <!-- GitHub -->
+      <div class="github reveal">
+        <div class="github__stats">
+          <h3 class="github__heading mono">@SWATV3NUB — LIVE FROM GITHUB</h3>
+          <div class="stat-grid">
+            <div class="stat">
+              <span class="stat__value" data-stat="repos" data-fallback="72">—</span>
+              <span class="stat__label mono">REPOSITORIES</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value" data-stat="stars" data-fallback="19">—</span>
+              <span class="stat__label mono">STARS</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value" data-stat="followers" data-fallback="50">—</span>
+              <span class="stat__label mono">FOLLOWERS</span>
+            </div>
+          </div>
+          <div class="github__heatmap">
+            <img
+              src="https://ghchart.rshah.org/ff4d1f/swatv3nub"
+              alt="GitHub contribution heatmap for swatv3nub showing commit activity over the last year"
+              loading="lazy" width="828" height="128">
+          </div>
+          <a class="link-arrow github__cta" href="https://github.com/swatv3nub" target="_blank" rel="noopener noreferrer">
+            Explore the rest of the experiments <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <p class="footer-logo">
-                        <span class="logo-bracket">&lt;</span>
-                        <span class="logo-text">MaskedVirus</span>
-                        <span class="logo-bracket">/&gt;</span>
-                    </p>
-                    <p class="footer-tagline">Building secure, innovative solutions</p>
-                </div>
-                <div class="footer-right">
-                    <p>Designed & Built by Swanit Anuran</p>
-                    <p>&copy; 2025 All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- ============ SECURITY ============ -->
+    <section class="security section" id="security">
+      <div class="section-head">
+        <span class="section-head__index mono">04 / OFFENSIVE-MINDED DEFENSE</span>
+        <h2 class="section-head__title">Break / Secure.</h2>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="security__grid">
+        <div class="security__copy reveal">
+          <p>
+            I got into security the honest way: build something, then try to destroy it.
+            Web application security, reconnaissance and vulnerability assessment — with
+            OWASP and MITRE ATT&amp;CK as the map rather than buzzwords.
+          </p>
+          <ul class="security__caps">
+            <li>VAPT</li>
+            <li>Web App Security</li>
+            <li>Reconnaissance</li>
+            <li>OSINT</li>
+            <li>Security Automation</li>
+            <li>Vulnerability Research</li>
+            <li>OWASP</li>
+            <li>MITRE ATT&amp;CK</li>
+          </ul>
+          <a class="link-arrow" href="https://tryhackme.com/p/maskedvirus" target="_blank" rel="noopener noreferrer">
+            TryHackMe profile <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <ol class="pipeline reveal-delay-1" aria-label="Security methodology">
+          <li class="pipeline__step"><span class="pipeline__name mono">SURFACE</span><span class="pipeline__note">map what exists</span></li>
+          <li class="pipeline__step"><span class="pipeline__name mono">RECON</span><span class="pipeline__note">collect before touching</span></li>
+          <li class="pipeline__step"><span class="pipeline__name mono">ENUMERATION</span><span class="pipeline__note">enumerate everything twice</span></li>
+          <li class="pipeline__step"><span class="pipeline__name mono">TEST</span><span class="pipeline__note">probe with permission</span></li>
+          <li class="pipeline__step"><span class="pipeline__name mono">EXPLOIT</span><span class="pipeline__note">validate real impact</span></li>
+          <li class="pipeline__step"><span class="pipeline__name mono">REPORT</span><span class="pipeline__note">write it so it gets fixed</span></li>
+          <li class="pipeline__step"><span class="pipeline__name mono">HARDEN</span><span class="pipeline__note">close the loop</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ MUSIC ============ -->
+    <section class="music section" id="music">
+      <p class="music__kicker mono reveal">THE OTHER SIDE OF THE SYSTEM</p>
+      <h2 class="music__title reveal-text">AFTER HOURS</h2>
+      <p class="music__lede reveal-delay-1">
+        When I'm not building software or breaking systems, I'm producing music.
+        Years of electronic production — arrangement, sound design, mixing —
+        and yes, it leaks into how I engineer everything else.
+      </p>
+
+      <div class="music__viz reveal-delay-2">
+        <canvas id="spectrum-canvas" aria-hidden="true"></canvas>
+        <span class="music__viz-note mono">DECORATIVE SPECTRUM — NO AUDIO (YET)</span>
+      </div>
+
+      <div class="music__genres reveal-delay-2" aria-label="Genres explored">
+        <span>Hyperpop</span><span>Melodic Dubstep</span><span>Future Bass</span><span>Riddim</span>
+        <span>Brostep</span><span>Chillstep</span><span>Sadcore</span><span>Indie Electronic</span>
+        <span>Afrobeats</span><span>Indie Pop</span><span>Hip-hop</span>
+      </div>
+
+      <div class="music__foot reveal-delay-3">
+        <span class="music__alias mono">PRODUCER ALIAS: <strong>SW4NIT</strong> · FORMERLY MASKEDVIRUS</span>
+        <div class="music__links">
+          <a class="link-arrow" href="https://linktr.ee/maskedvirus" target="_blank" rel="noopener noreferrer" data-cursor="play">All the noise <span aria-hidden="true">↗</span></a>
+          <a class="link-arrow" href="https://instagram.com/sw4nit" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ JOURNEY ============ -->
+    <section class="journey section" id="journey" aria-label="Evolution timeline">
+      <div class="section-head">
+        <span class="section-head__index mono">05 / EVOLUTION</span>
+        <h2 class="section-head__title">How the modes happened.</h2>
+      </div>
+      <ol class="timeline">
+        <li class="timeline__item reveal">
+          <span class="timeline__stage mono">CODE</span>
+          <p>First programs. The compiler became home base.</p>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__stage mono">MOBILE</span>
+          <p>Android with Kotlin, then Flutter — shipping software to pockets.</p>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__stage mono">SECURITY</span>
+          <p>VAPT, recon and tooling — learning systems by attacking them, legally.</p>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__stage mono">AI</span>
+          <p>Agents, automation, NLP — teaching software to do the boring parts.</p>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__stage mono">CREATIVE TECH</span>
+          <p>Audio DSP and VSTs — years in FL Studio paying off in C++.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ PHILOSOPHY ============ -->
+    <section class="philosophy section" aria-label="Philosophy">
+      <p class="philosophy__statement reveal-text">
+        Understand deeply enough to build it. Break it. Rebuild it better.
+      </p>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact section" id="contact">
+      <div class="section-head">
+        <span class="section-head__index mono">06 / TRANSMISSION</span>
+        <h2 class="section-head__title">Let's build something weird.</h2>
+      </div>
+      <p class="contact__lede reveal">
+        Security research, software, AI systems, creative technology, music —
+        if it's interesting, I'm listening.
+      </p>
+
+      <div class="contact__grid">
+        <div class="contact__info reveal">
+          <p class="contact__status mono"><span class="status-pill__dot" aria-hidden="true"></span>AVAILABLE FOR OPPORTUNITIES / COLLABORATIONS</p>
+          <p class="contact__loc mono">BENGALURU, KARNATAKA, IN · UTC+5:30</p>
+
+          <ul class="contact__socials">
+            <li><a href="https://github.com/swatv3nub" target="_blank" rel="noopener noreferrer">GitHub<span class="mono">↗</span></a></li>
+            <li><a href="https://linkedin.com/in/maskedvirus" target="_blank" rel="noopener noreferrer">LinkedIn<span class="mono">↗</span></a></li>
+            <li><a href="https://twitter.com/i_maskedvirus" target="_blank" rel="noopener noreferrer">Twitter / X<span class="mono">↗</span></a></li>
+            <li><a href="https://instagram.com/sw4nit" target="_blank" rel="noopener noreferrer">Instagram<span class="mono">↗</span></a></li>
+            <li><a href="https://tryhackme.com/p/maskedvirus" target="_blank" rel="noopener noreferrer">TryHackMe<span class="mono">↗</span></a></li>
+            <li><a href="https://linktr.ee/maskedvirus" target="_blank" rel="noopener noreferrer">Linktree<span class="mono">↗</span></a></li>
+          </ul>
+        </div>
+
+        <form class="contact__form reveal-delay-1" id="contact-form" action="https://formspree.io/f/mgvpppkv" method="POST">
+          <p class="contact__form-label mono">PREFER A FORM? IT WORKS.</p>
+          <div class="field">
+            <label class="mono" for="cf-name">NAME</label>
+            <input type="text" id="cf-name" name="name" autocomplete="name" required placeholder="Your name">
+          </div>
+          <div class="field">
+            <label class="mono" for="cf-email">EMAIL</label>
+            <input type="email" id="cf-email" name="email" autocomplete="email" required placeholder="you@domain.tld">
+          </div>
+          <div class="field">
+            <label class="mono" for="cf-message">MESSAGE</label>
+            <textarea id="cf-message" name="message" rows="4" required placeholder="What are we building?"></textarea>
+          </div>
+          <button type="submit" class="btn btn--solid" id="cf-submit">Transmit</button>
+          <p class="contact__form-status mono" id="cf-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__row">
+      <span class="footer__logo mono">SW4NIT</span>
+      <span class="footer__modes mono">BUILD / BREAK / THINK / CREATE</span>
+      <span class="footer__egg mono" id="maskedvirus-egg" title="you found the old name">&lt;MaskedVirus /&gt;</span>
+    </div>
+    <div class="footer__row footer__row--sub mono">
+      <span>© 2026 SWANIT ANURAN</span>
+      <span>BUILT FROM SCRATCH · NO TEMPLATES HARMED</span>
+      <span>PRESS <kbd>/</kbd> ANYWHERE</span>
+    </div>
+  </footer>
+
+  <!-- ============ PROJECT MODAL ============ -->
+  <dialog class="pmodal" id="project-modal" aria-labelledby="pmodal-title-slot">
+    <div class="pmodal__inner">
+      <button class="pmodal__close mono" id="pmodal-close" aria-label="Close project details">ESC ✕</button>
+      <div class="pmodal__content" id="pmodal-content"><!-- template injected --></div>
+    </div>
+  </dialog>
+
+  <!-- ============ COMMAND PALETTE ============ -->
+  <dialog class="palette" id="palette" aria-label="Command palette">
+    <div class="palette__head mono"><span class="accent">❯</span> swanit@localhost ~ <span class="palette__hint">ESC TO CLOSE</span></div>
+    <input class="palette__input mono" id="palette-input" type="text" placeholder="type a command… (help, whoami, projects, music, security, github, contact)"
+           autocomplete="off" spellcheck="false" aria-label="Command input">
+    <ul class="palette__output mono" id="palette-output" aria-live="polite"></ul>
+  </dialog>
+
+  <!-- Toast -->
+  <div class="toast mono" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script type="module" src="/scripts/main.js"></script>
 </body>
 </html>
-
-                    
