@@ -911,14 +911,7 @@ html.has-cursor .cursor-ring { display: flex; }
   border: 1px solid rgba(255, 59, 92, 0.28);
   padding: 0.5em 1em;
 }
-.pipeline { position: relative; padding-left: 1.6rem; }
-.pipeline::before {
-  content: "";
-  position: absolute;
-  left: 4px; top: 8px; bottom: 8px;
-  width: 1px;
-  background: linear-gradient(var(--m-sec), transparent);
-}
+.pipeline { padding-left: 1.6rem; }
 .pipeline__step {
   position: relative;
   display: flex;
