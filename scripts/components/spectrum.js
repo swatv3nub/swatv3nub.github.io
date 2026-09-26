@@ -1,100 +1,136 @@
-import { prefersReduced } from '../lib/motion.js';
+import { reduceMotion } from '../lib/motion.js';
 
 export function initSpectrum() {
   const canvas = document.getElementById('spectrum-canvas');
   if (!canvas) return;
-  const ctx = canvas.getContext('2d');
 
-  const COLOR = '167, 139, 250';
-  let w = 0, h = 0;
-  let bars = [];
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  const TAU = Math.PI * 2;
+  let width = 0;
+  let height = 0;
+  let fill;
+  let visible = false;
+  let frameId = 0;
+  let lastFrame = 0;
+  let phase = 0;
   let pointerX = -1000;
-  let running = false;
-  let raf = null;
+  let step = 0;
+  let count = 0;
+  let upper = new Float32Array(0);
+  let lower = new Float32Array(0);
 
   function resize() {
-    const dpr = Math.min(devicePixelRatio || 1, 2);
-    w = canvas.clientWidth;
-    h = canvas.clientHeight;
-    canvas.width = w * dpr;
-    canvas.height = h * dpr;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = canvas.clientWidth;
+    height = canvas.clientHeight;
+    if (!width || !height) return;
+
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const count = Math.max(36, Math.floor(w / 26));
-    bars = Array.from({ length: count }, (_, i) => ({
-      phase: i * 0.55,
-      speed: 0.6 + ((i * 37) % 10) / 14,
-      boost: 0
-    }));
+    step = width < 600 ? 2 : 2.5;
+    count = Math.ceil(width / step);
+    upper = new Float32Array(count + 1);
+    lower = new Float32Array(count + 1);
+
+    fill = ctx.createLinearGradient(0, 0, 0, height);
+    fill.addColorStop(0, 'rgba(167, 139, 250, 0.14)');
+    fill.addColorStop(0.35, 'rgba(167, 139, 250, 0.58)');
+    fill.addColorStop(0.5, 'rgba(210, 194, 255, 0.9)');
+    fill.addColorStop(0.65, 'rgba(167, 139, 250, 0.58)');
+    fill.addColorStop(1, 'rgba(167, 139, 250, 0.14)');
+
+    draw(phase);
   }
 
-  function draw(t) {
-    ctx.clearRect(0, 0, w, h);
-    const bw = w / bars.length;
-    const usableW = bw * 0.42;
+  function amplitude(x, time) {
+    const u = x / width;
+    const edge = Math.pow(Math.sin(Math.PI * u), 0.45);
+    const beat = Math.pow(0.5 + 0.5 * Math.sin(TAU * (u * 4.2 - time * 0.22)), 2.5);
+    const swell = 0.5 + 0.5 * Math.sin(TAU * (u * 1.8 + time * 0.09) + 0.8);
+    const carrier =
+      0.54 * Math.sin(TAU * (u * 16.5 - time * 1.35)) +
+      0.29 * Math.sin(TAU * (u * 37 - time * 2.92) + 1.1) +
+      0.17 * Math.sin(TAU * (u * 69 - time * 4.4) + 2.4);
+    const proximity = Math.max(0, 1 - Math.abs(x - pointerX) / 160);
 
-    bars.forEach((bar, i) => {
-      const x = i * bw + bw / 2;
-      const dist = Math.abs(x - pointerX);
-      const proximity = Math.max(0, 1 - dist / 180);
-
-      const wave =
-        Math.sin(t * bar.speed + bar.phase) * 0.32 +
-        Math.sin(t * bar.speed * 2.7 + bar.phase * 1.618) * 0.18 +
-        Math.sin(t * 0.31 + i) * 0.12;
-      const level = Math.abs(wave) * 0.75 + 0.08 + proximity * 0.55 + bar.boost;
-      const bh = Math.max(3, level * h * 0.82);
-
-      const grad = ctx.createLinearGradient(0, h / 2 - bh / 2, 0, h / 2 + bh / 2);
-      grad.addColorStop(0, `rgba(${COLOR}, ${0.15 + proximity * 0.35})`);
-      grad.addColorStop(0.5, `rgba(${COLOR}, ${0.65 + proximity * 0.35})`);
-      grad.addColorStop(1, `rgba(${COLOR}, ${0.15 + proximity * 0.35})`);
-      ctx.fillStyle = grad;
-      ctx.fillRect(x - usableW / 2, h / 2 - bh / 2, usableW, bh);
-
-      // center hairline tick
-      ctx.fillStyle = `rgba(${COLOR}, 0.28)`;
-      ctx.fillRect(x - usableW / 2, h / 2 - 0.5, usableW, 1);
-    });
+    return edge * (0.18 + 0.54 * beat + 0.18 * swell + 0.28 * proximity) *
+      (0.16 + 0.84 * Math.abs(carrier));
   }
 
-  function frame() {
-    if (!running) return;
-    draw(performance.now() / 1000);
-    bars.forEach((b) => { b.boost *= 0.94; });
-    raf = requestAnimationFrame(frame);
+  function draw(time) {
+    if (!width || !height) return;
+    ctx.clearRect(0, 0, width, height);
+
+    const center = height / 2;
+    const reach = height * 0.43;
+    ctx.fillStyle = 'rgba(167, 139, 250, 0.12)';
+    ctx.fillRect(0, center - 0.5, width, 1);
+
+    for (let i = 0; i <= count; i++) {
+      const x = Math.min(i * step, width);
+      const reachAtX = Math.max(1, amplitude(x, time) * reach);
+      upper[i] = center - reachAtX;
+      lower[i] = center + reachAtX * (0.86 + 0.1 * Math.sin(x * 0.027 + time));
+    }
+
+    ctx.beginPath();
+    ctx.moveTo(0, upper[0]);
+    for (let i = 1; i <= count; i++) ctx.lineTo(Math.min(i * step, width), upper[i]);
+    for (let i = count; i >= 0; i--) ctx.lineTo(Math.min(i * step, width), lower[i]);
+    ctx.closePath();
+    ctx.fillStyle = fill;
+    ctx.fill();
+
+    ctx.lineWidth = 1.1;
+    ctx.strokeStyle = 'rgba(211, 198, 255, 0.8)';
+    ctx.beginPath();
+    for (let i = 0; i <= count; i++) {
+      const x = Math.min(i * step, width);
+      if (i === 0) ctx.moveTo(x, upper[i]);
+      else ctx.lineTo(x, upper[i]);
+    }
+    ctx.stroke();
+
+    ctx.strokeStyle = 'rgba(167, 139, 250, 0.48)';
+    ctx.beginPath();
+    for (let i = 0; i <= count; i++) {
+      const x = Math.min(i * step, width);
+      if (i === 0) ctx.moveTo(x, lower[i]);
+      else ctx.lineTo(x, lower[i]);
+    }
+    ctx.stroke();
   }
 
-  function start() {
-    if (prefersReduced()) { draw(1.5); return; }
-    if (!running) { running = true; frame(); }
+  function frame(now) {
+    if (!visible || document.hidden) return;
+    if (lastFrame) phase += Math.min((now - lastFrame) / 1000, 0.05) *
+      (reduceMotion.matches ? 0.85 : 1.8);
+    lastFrame = now;
+    draw(phase);
+    frameId = requestAnimationFrame(frame);
   }
-  function stop() {
-    running = false;
-    cancelAnimationFrame(raf);
+
+  function syncPlayback() {
+    cancelAnimationFrame(frameId);
+    if (visible && !document.hidden) {
+      lastFrame = 0;
+      frameId = requestAnimationFrame(frame);
+    }
   }
 
-  resize();
-  addEventListener('resize', () => { resize(); if (!running) draw(1.5); }, { passive: true });
-
-  canvas.parentElement.addEventListener('pointermove', (e) => {
-    const rect = canvas.getBoundingClientRect();
-    pointerX = e.clientX - rect.left;
-    // inject energy near the pointer
-    bars.forEach((bar, i) => {
-      const x = (i / bars.length) * rect.width;
-      if (Math.abs(x - pointerX) < 120) bar.boost = Math.min(bar.boost + 0.06, 0.35);
-    });
-  }, { passive: true });
-
-  canvas.parentElement.addEventListener('pointerleave', () => { pointerX = -1000; });
-
-  new IntersectionObserver((entries) => {
-    entries[0].isIntersecting ? start() : stop();
+  new ResizeObserver(resize).observe(canvas);
+  new IntersectionObserver(([entry]) => {
+    visible = entry.isIntersecting;
+    syncPlayback();
   }).observe(canvas);
 
-  document.addEventListener('visibilitychange', () => {
-    document.hidden ? stop() : start();
-  });
-
-  start();
+  canvas.parentElement.addEventListener('pointermove', (event) => {
+    pointerX = event.clientX - canvas.getBoundingClientRect().left;
+  }, { passive: true });
+  canvas.parentElement.addEventListener('pointerleave', () => { pointerX = -1000; });
+  document.addEventListener('visibilitychange', syncPlayback);
+  reduceMotion.addEventListener('change', syncPlayback);
 }
