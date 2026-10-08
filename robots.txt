@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sw4nit.is-a.dev/sitemap.xml
+Sitemap: https://sw4nit.dev/sitemap.xml
